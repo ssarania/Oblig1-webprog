@@ -14,12 +14,12 @@ function validateAndLeggTilBillett() {
 
     if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "" && telefonr !== "" && epost !== "") {
         leggTilBillett();
+    } else if (film === "" && antall === "" && fornavn === "" && etternavn === "" && telefonr === "" && epost === ""){
+        alert("Vennligst fyll ut alle feltene.");
     } else if (!telefonRegex.test(telefonr)) {
         alert("Vennligst oppgi et gyldig telefonnummer med 8 siffer.");
     } else if (!epostRegex.test(epost)){
         alert("Vennligst oppgi et gyldig epost med @.");
-    } else {
-        alert("Vennligst fyll ut alle feltene.");
     }
 }
 function leggTilBillett() {
