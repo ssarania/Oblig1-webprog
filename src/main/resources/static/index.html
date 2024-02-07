@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestilling av kinobilletter</title>
+  <script type ="text/javascript" src="script.js"></script>
+</head>
+
+<body>
+<h1>Bestilling av kinobilletter</h1>
+
+<div class="input-container">
+  <label for="filmValg">Velg film:</label>
+  <select id="filmValg" style="margin-bottom: 15px;">
+    <option value="">Velg film her</option>
+    <option value="Argylle">Argylle</option>
+    <option value="Madame Web">Madame Web</option>
+    <option value="Lisa Frankenstein">Lisa Frankenstein</option>
+    <option value="Bob Marley: One Love">Bob Marley: One Love</option>
+  </select>
+</div>
+
+<form id="billettSkjema">
+  <table>
+    <tr>
+      <td><label for="antallBilletter">Antall</label></td>
+      <td><input type="number" id="antallBilletter" style="width: 20px; margin-bottom: 20px;" required min="1"></td>
+    </tr>
+    <tr>
+      <td><label for="fornavn">Fornavn</label></td>
+      <td><input type="text" id="fornavn" required></td>
+    </tr>
+    <tr>
+      <td><label for="etternavn">Etternavn</label></td>
+      <td><input type="text" id="etternavn" required></td>
+    </tr>
+    <tr>
+      <td><label for="telefonr">Telefonr</label></td>
+      <td><input type="tel" id="telefonr" required></td>
+    </tr>
+    <tr>
+      <td><label for="epost">Epost</label></td>
+      <td><input type="email" id="epost" required></td>
+    </tr>
+  </table>
+
+  <button type="button" id="kjopBillett">Kjøp billett</button>
+</form>
+
+<h2>Alle billetter</h2>
+<ul id="billettListe"></ul>
+<button type="button" id="slettAlleBilletter">Slett alle billettene</button>
+</body>
+</html>
