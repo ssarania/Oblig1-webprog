@@ -1,6 +1,3 @@
-document.getElementById("kjopBillett").addEventListener("click", validateAndLeggTilBillett);
-document.getElementById("slettAlleBilletter").addEventListener("click", slettAlleBilletter);
-
 function validateAndLeggTilBillett() {
     const film = document.getElementById("filmValg").value;
     const antall = document.getElementById("antallBilletter").value;
@@ -14,14 +11,15 @@ function validateAndLeggTilBillett() {
 
     if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "" && telefonr !== "" && epost !== "") {
         leggTilBillett();
-    } else if (film === "" && antall === "" && fornavn === "" && etternavn === "" && telefonr === "" && epost === ""){
+    } else if (film === "" || antall === "" || fornavn === "" || etternavn === "" || telefonr === "" || epost === "") {
         alert("Vennligst fyll ut alle feltene.");
     } else if (!telefonRegex.test(telefonr)) {
         alert("Vennligst oppgi et gyldig telefonnummer med 8 siffer.");
     } else if (!epostRegex.test(epost)){
-        alert("Vennligst oppgi et gyldig epost med @.");
+        alert("Vennligst oppgi en gyldig epostadresse.");
     }
 }
+
 function leggTilBillett() {
     const film = document.getElementById("filmValg").value;
     const antall = document.getElementById("antallBilletter").value;
