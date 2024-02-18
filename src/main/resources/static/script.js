@@ -1,10 +1,10 @@
 function validateAndLeggTilBillett() {
-    const film = document.getElementById("filmValg").value;
-    const antall = document.getElementById("antallBilletter").value;
-    const fornavn = document.getElementById("fornavn").value;
-    const etternavn = document.getElementById("etternavn").value;
-    const telefonr = document.getElementById("telefonr").value;
-    const epost = document.getElementById("epost").value;
+    let film = document.getElementById("filmValg").value;
+    let antall = document.getElementById("antallBilletter").value;
+    let fornavn = document.getElementById("fornavn").value;
+    let etternavn = document.getElementById("etternavn").value;
+    let telefonr = document.getElementById("telefonr").value;
+    let epost = document.getElementById("epost").value;
 
     var telefonRegex = /^((0047)?|\+47|47)?\d{8}$/;
     var epostRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -21,14 +21,14 @@ function validateAndLeggTilBillett() {
 }
 
 function leggTilBillett() {
-    const film = document.getElementById("filmValg").value;
-    const antall = document.getElementById("antallBilletter").value;
-    const fornavn = document.getElementById("fornavn").value;
-    const etternavn = document.getElementById("etternavn").value;
-    const telefonr = document.getElementById("telefonr").value;
-    const epost = document.getElementById("epost").value;
+    let film = document.getElementById("filmValg").value;
+    let antall = document.getElementById("antallBilletter").value;
+    let fornavn = document.getElementById("fornavn").value;
+    let etternavn = document.getElementById("etternavn").value;
+    let telefonr = document.getElementById("telefonr").value;
+    let epost = document.getElementById("epost").value;
 
-    const nyBillett = document.createElement("li");
+    let nyBillett = document.createElement("li");
     nyBillett.textContent = `${film} - ${antall} billetter, ${fornavn} ${etternavn}, ${telefonr}, ${epost}`;
 
     document.getElementById("billettListe").appendChild(nyBillett);
