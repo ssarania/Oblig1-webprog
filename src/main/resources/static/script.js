@@ -6,8 +6,8 @@ function validateAndLeggTilBillett() {
     let telefonr = document.getElementById("telefonr").value;
     let epost = document.getElementById("epost").value;
 
-    var telefonRegex = /^(4[0-9]{7}|9[0-9]{7})$/;
-    var epostRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    let telefonRegex = /^(4[0-9]{7}|9[0-9]{7})$/;
+    let epostRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
     if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "") {
         if (telefonr === "" || !telefonRegex.test(telefonr)) {
