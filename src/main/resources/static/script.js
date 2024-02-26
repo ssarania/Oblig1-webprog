@@ -6,17 +6,19 @@ function validateAndLeggTilBillett() {
     let telefonr = document.getElementById("telefonr").value;
     let epost = document.getElementById("epost").value;
 
-    var telefonRegex = /^((0047)?|\+47|47)?\d{8}$/;
-    var epostRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var telefonRegex = /^(4[0-9]{7}|9[0-9]{7})$/;
+    var epostRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
-    if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "" && telefonr !== "" && epost !== "") {
-        leggTilBillett();
-    } else if (film === "" || antall === "" || fornavn === "" || etternavn === "" || telefonr === "" || epost === "") {
+    if (film !== "" && antall !== "" && fornavn !== "" && etternavn !== "") {
+        if (telefonr === "" || !telefonRegex.test(telefonr)) {
+            alert("Vennligst oppgi et gyldig telefonnummer med 8 siffer.");
+        } else if (epost === "" || !epostRegex.test(epost)) {
+            alert("Vennligst oppgi en gyldig epostadresse.");
+        } else {
+            leggTilBillett();
+        }
+    } else {
         alert("Vennligst fyll ut alle feltene.");
-    } else if (!telefonRegex.test(telefonr)) {
-        alert("Vennligst oppgi et gyldig telefonnummer med 8 siffer.");
-    } else if (!epostRegex.test(epost)){
-        alert("Vennligst oppgi en gyldig epostadresse.");
     }
 }
 
@@ -26,7 +28,7 @@ function leggTilBillett() {
     let fornavn = document.getElementById("fornavn").value;
     let etternavn = document.getElementById("etternavn").value;
     let telefonr = document.getElementById("telefonr").value;
-    let epost = document.getElementById("epost").value;
+    let epost = document.getElementById("epost").value
 
     let nyBillett = document.createElement("li");
     nyBillett.textContent = `${film} - ${antall} billetter, ${fornavn} ${etternavn}, ${telefonr}, ${epost}`;
@@ -40,7 +42,6 @@ function leggTilBillett() {
     document.getElementById("telefonr").value = "";
     document.getElementById("epost").value = "";
 }
-
 function slettAlleBilletter() {
     document.getElementById("billettListe").innerHTML = "";
 }
